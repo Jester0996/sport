@@ -1,0 +1,45 @@
+:root {
+  --accent: #ffd479;
+  --font-base: 'Roboto', sans-serif;
+  --font-accent: 'Bebas Neue', sans-serif;
+}
+
+body {
+  background-color: #1f2a32;
+  color: #fafaf5;
+
+  font-family: var(--font-base);
+  font-weight: 300;
+
+  /* padding-bottom: 600px; */
+}
+
+a {
+  color: #fafaf5;
+}
+
+.text{
+  font-size: calc(1vw + 3rem);
+  font-weight: 700;
+  text-shadow: 0 .5rem 1rem rgba(0,0,0,.3);
+  background: linear-gradient(-45deg, #fff 20%, #ffd479 70%, #fff 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% auto;
+  animation: text 7s ease-in-out infinite alternate;
+}
+
+@keyframes text {
+  0% {
+    background-position: 200%;
+  }
+}
+
+.container {
+  max-width: 1200px; /*ширина контейнира по макеты 1700 + (15+15) = 1200*/
+  width: 100%;
+
+  margin: 0 auto;
+  padding: 0 15px;
+}

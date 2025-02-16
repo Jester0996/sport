@@ -1,0 +1,115 @@
+.header {
+  padding-top: 30px;
+  height: 750px;
+
+  background-image: url("./../../img/header/header16.png");
+  /* background-image: image-set(
+      url("./../../img/header/header2.jpg") 1x,
+      url("./../../img/header/header2.jpg") 2x
+  ); */
+
+  background-repeat: no-repeat; /*чтобы не повторялась картинка*/
+  background-size: cover; /*чтобы был на весь блок*/
+ background-position: center;  /* чтобы была по центру */
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  width: 183px;
+  height: 81px;
+}
+
+.header-logo {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeIn 0.9s forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+  font-family: var(--font-accent);
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+.header-nav a {
+  transition: color 0.2s ease-in;
+}
+.header-nav a:hover {
+  color: var(--accent);
+}
+.header-img{
+  position: relative;   /* Чтобы псевдоэлемент затемнения располагался правильно */
+  max-width: 100%;
+  padding-top: 125px;
+  text-align: center;
+}
+.header-img_filter {
+  width: 426px;
+  transition: filter 0.5s ease;/* Плавный переход для фильтра */
+  filter: brightness(0.5);/* Затемнение изображения */
+}
+.header-img_filter:hover {
+  filter: brightness(0.8); /* Убираем затемнение при наведении */
+}
+@media (max-width: 800px) {
+  .header-logo{
+    display: none;
+  }
+
+  .header-row {
+    justify-content: center;
+  }
+
+  .header-img {
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .header {
+    height: auto;
+    padding-bottom: 60px;
+    background-position: left top; /*указываю расположение фотки*/
+  }
+  .header-logo {
+    display: block;
+  }
+
+  .header-row {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  .header-nav{
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  .header-img {
+    display: none;
+  }
+
+  /* .logo-img{
+    display: flex;
+    justify-items: center;
+    width: 50%;
+  } */
+}
